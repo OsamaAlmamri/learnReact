@@ -1,19 +1,33 @@
 'use client';
 
 import HeaderNav from "@/components/HeaderNav/HeaderNav";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 
 function Hooks() {
     const [counter, setCounter] = useState<number>(0);
     const [success, setSucess] = useState<boolean>(false);
 
+    const inputRef = useRef<HTMLInputElement>(null);
     function chnageCounter() {
         setCounter(counter + 1);
         if(counter==10)
         {
             setSucess(true);
         }
+    }
+    function focuseInput() {
+
+        if(inputRef.current) {
+            inputRef.current.focus();
+
+        }
+    }
+ const changeInput=(e)=> {
+
+
+           console.log( e.target.value);
+
     }
 
     // useEffect(() => {
@@ -43,6 +57,11 @@ function Hooks() {
             <h1 className="text-center text-2xl"> {counter} </h1>
 
             <button className="btn border bg-primary py-2 w-56 " onClick={chnageCounter}> increase</button>
+            <div className="text-center text-xl">
+                <input onChange={changeInput} ref={inputRef} />
+                <button className="btn border bg-primary py-2 w-56 " onClick={focuseInput}> focuseInput</button>
+
+            </div>
         </div>
     );
 }
