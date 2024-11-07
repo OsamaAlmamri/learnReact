@@ -1,5 +1,5 @@
 import Link from "next/link";
-// import styles from "./HeaderNav.module.css"
+import styles from "./HeaderNav.module.css"
 
 
 const myLogo = {
