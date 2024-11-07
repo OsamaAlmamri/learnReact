@@ -16,7 +16,7 @@ const navLinks = [
     {label: "Project", key: "/projects"},
     // { label: "Photography", key: "#photography" },
     // { label: "Video Editing", key: "#videogallery" },
-    {label: "Contact", key: "/#contact"},
+    {label: "Hooks", key: "/hooks"},
 ];
 
 
