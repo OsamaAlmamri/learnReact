@@ -1,8 +1,10 @@
+import HeaderNav from "@/components/HeaderNav/HeaderNav";
+
 function AppHeader(){
 
     return (
       <header className="AppHeader">
-          <h1>iiii</h1>
+         <HeaderNav/>
       </header>
     );
 }
