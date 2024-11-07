@@ -11,7 +11,7 @@ function SectionTitle({title, description}: SectionProp) {
             <div className=" col-span-12 md:col-span-10 lg:col-span-8  ">
                 <div className="header-section">
                     <h2 className="title">{title}</h2>
-                    <p className="description">{description}</p>
+                    {description && <p className="description">{description}</p>}
                 </div>
             </div>
         </div>
