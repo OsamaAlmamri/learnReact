@@ -1,18 +1,26 @@
 'use client';
 
 import HeaderNav from "@/components/HeaderNav/HeaderNav";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 
 
 function Hooks() {
     const [counter, setCounter] = useState<number>(0);
     const [success, setSucess] = useState<boolean>(false);
+    const [shouldChnage, setsShouldChanage] = useState<boolean>(false);
+    const incom=useMemo(()=>calculate(),[shouldChnage])
 
     const inputRef = useRef<HTMLInputElement>(null);
-    function chnageCounter() {
+    function calculate():number {
+
+        console.log( "calculate and save calculate in incom ");
+        return 100;
+
+    }    function chnageCounter() {
         setCounter(counter + 1);
         if(counter==10)
         {
+            setsShouldChanage(true);
             setSucess(true);
         }
     }
@@ -55,6 +63,7 @@ function Hooks() {
             <HeaderNav/>
 
             <h1 className="text-center text-2xl"> {counter} </h1>
+            <h1 className="text-center text-2xl"> income :  {incom} </h1>
 
             <button className="btn border bg-primary py-2 w-56 " onClick={chnageCounter}> increase</button>
             <div className="text-center text-xl">
