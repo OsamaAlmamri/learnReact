@@ -33,9 +33,7 @@ function Hooks() {
     }
  const changeInput=(e)=> {
 
-
            console.log( e.target.value);
-
     }
 
     // useEffect(() => {
